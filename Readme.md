@@ -4,6 +4,6 @@ chmod u+x ./network.sh
 
 ./network.sh createchannel
 
-Step2: To remove HLf stuff excute below mentioned script
+Step2: To remove HLF stuff excute below mentioned script
 
 ./network.sh down
