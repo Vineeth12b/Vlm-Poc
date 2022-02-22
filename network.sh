@@ -63,26 +63,21 @@ function Createchannel(){
     cd ../scripts/
     ./channel.sh
 }
-# #dismantial
-# generatefiles
-# sleep 5
-# networkfiles
-# sleep 5
-#Createchannel
+
 
 if  [ "$Value" == "up" ]; then
   generatefiles
   sleep 5
   networkfiles
 elif [ "$Value" == "createchannel" ]; then
-  #infoln "deploying chaincode-as-a-service on channel '${CHANNEL_NAME}'"
+  
   generatefiles
   sleep 5
   networkfiles
   sleep 5
   Createchannel
 elif [ "$Value" == "down" ]; then
-  #infoln "deploying chaincode-as-a-service on channel '${CHANNEL_NAME}'"
+  
   dismantial  
 else
   echo "===============================Error Occured========================================="

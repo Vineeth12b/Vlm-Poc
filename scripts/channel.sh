@@ -15,7 +15,7 @@ setGlobalsForPeer0dealer(){
 
 
 setGlobalsForPeer0rta(){
-    #export RTA_PEER_LOCALMSPID="rtaMSP"
+    
     export CORE_PEER_LOCALMSPID="rtaMSP"
     export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_rta_CA
     export CORE_PEER_MSPCONFIGPATH=${PWD}/../crypto-config/peerOrganizations/rta.vlm.com/users/Admin@rta.vlm.com/msp
@@ -23,7 +23,7 @@ setGlobalsForPeer0rta(){
 }
 
 createChannel(){
-    # rm -rf ./channel-artifacts/*
+    
      setGlobalsForPeer0dealer
     
     # Replace localhost with your orderer's vm IP address
