@@ -1,0 +1,34 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+
+networks:
+  vlmnetwork:
+
+services:
+  cli:
+    container_name: cli
+    image: hyperledger/fabric-tools:$IMAGE_TAG
+    tty: true
+    stdin_open: true
+    environment:
+      - GOPATH=/opt/gopath
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - FABRIC_LOGGING_SPEC=INFO
+      #- FABRIC_LOGGING_SPEC=DEBUG
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: /bin/bash
+    volumes:
+        - /var/run/:/host/var/run/
+        - ../crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations
+     
+        - ../channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
+        - ../config:/opt/gopath/src/github.com/hyperledger/fabric/peer/config
+        - ../chaincode/ge:/opt/gopath/src/github.com/hyperledger/fabric/peer/chaincode
+    # depends_on:
+    #   - peer0.seller.ge.com
+    #   - peer0.buyer.ge.com
+    networks:
+      - vlmnetwork
