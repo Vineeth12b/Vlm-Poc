@@ -64,6 +64,11 @@ function Createchannel(){
     ./channel.sh
 }
 
+function deployChaincode(){
+    cd ./scripts/
+    ./deployCC.sh
+}
+
 
 if  [ "$Value" == "up" ]; then
   generatefiles
@@ -78,7 +83,9 @@ elif [ "$Value" == "createchannel" ]; then
   Createchannel
 elif [ "$Value" == "down" ]; then
   
-  dismantial  
+  dismantial 
+elif [ "$Value" == "deployCC" ]; then
+  deployChaincode   
 else
   echo "===============================Error Occured========================================="
 fi

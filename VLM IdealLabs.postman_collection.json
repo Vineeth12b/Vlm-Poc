@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "d13f3a6c-67f2-461c-95fa-f4e95565eb07",
+		"name": "VLM IdealLabs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createRecord",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vehicleDetails\": {\r\n        \"engineNumber\": \"9P 00001 189274\",\r\n        \"chassisNumber\": \"1HGBH86GIR5109186\",\r\n        \"invoicedAmount\": \"600000\",\r\n        \"date\": \"12-Sep-1999\"\r\n    },\r\n    \"citizenDetails\": {\r\n        \"name\": \"Kishore\",\r\n        \"dateOfBirth\": \"09-Apr-1989\",\r\n        \"aadharNumber\": \"78 4536743519\",\r\n        \"addressProof\": \"Electricity Bill\"\r\n    },\r\n    \"insuranceDetails\": {\r\n        \"insurerCompany\": \"TATA AIG\",\r\n        \"insuredAmount\": \"3,000,000\",\r\n        \"validT ill\": \"23-Feb-2022\"\r\n    },\r\n    \"documnetHash\": {\r\n        \"form20\": \"\",\r\n        \"form21\": \"\",\r\n        \"temporaryRegistration\": \"\",\r\n        \"insuranceDoc\": \"\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/createRecord",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"createRecord"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "queryRecordByChassisNumber",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"chassisNumber\" : \"5487549848\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/queryRecordByChassisNumber",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"queryRecordByChassisNumber"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "queryRecordHistory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"chassisNumber\" : \"1HGBH86GIR5109186\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/queryRecordHistory",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"queryRecordHistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "queryAllRecords",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/queryAllRecords",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"queryAllRecords"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateOwnership",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"newOwner\": {\r\n        \"name\": \"Shyam\",\r\n        \"gender\": \"Male\",\r\n        \"contactNumber\": \"8237r2398\",\r\n        \"aadharNumber\": \"398475394857\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/updateOwnership?chassisNumber=1HGBH86GIR5109186",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"updateOwnership"
+					],
+					"query": [
+						{
+							"key": "chassisNumber",
+							"value": "1HGBH86GIR5109186"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
