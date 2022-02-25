@@ -3,6 +3,7 @@ Step1: To generate complete network, channel creation & joining execute below me
 chmod u+x ./network.sh
 ./network.sh createchannel
 
+<<<<<<< HEAD
 Step2: To deploy chaincode, execute below mentioned script 
 
 ./network.sh deployCC
@@ -18,6 +19,9 @@ cd ../
 npm start
 
 NOTE : To remove HLf stuff exceute below mentioned script
+=======
+Step2: To remove HLF stuff excute below mentioned script
+>>>>>>> cf367c42a48fb1ac1f4d297cd9b06a0fed31b3a9
 
 ./network.sh down
 
