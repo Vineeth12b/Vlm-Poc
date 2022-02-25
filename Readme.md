@@ -1,6 +1,8 @@
 Step1: To generate complete network, channel creation & joining execute below mentioned script from currect directory
 
 chmod u+x ./network.sh
+
+
 ./network.sh createchannel
 
 
